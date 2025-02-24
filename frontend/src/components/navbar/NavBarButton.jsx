@@ -1,4 +1,5 @@
 import React from 'react';
+import './NavBarButton.css';
 
 const NavBarButton = ({ type, children }) => {
   return (

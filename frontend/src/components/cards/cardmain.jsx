@@ -20,6 +20,16 @@ const CardMain = () => {
       image: "https://imgs.search.brave.com/ghAwSf8UNrV9iSQCPdmRB1qUmZD0WgoYqggoWj6gOb0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFGOXBmU2d2YUwu/anBn",
       title: "Join Exciting Ramadan Challenges",
       description: "Participate in fun challenges to enhance your Ramadan."
+    },
+    {
+      image: "https://images.pexels.com/photos/2989625/pexels-photo-2989625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      title: "Join Our Community",
+      description: "Connect with others and share your Ramadan journey progress and challenges."
+    },
+    {
+      image: "https://img.freepik.com/free-photo/muslim-boy-learning-how-make-dua-allah_53876-25223.jpg",
+      title: "Prayer Times",
+      description: "Stay updated with accurate prayer times and notifications."
     }
   ];
 

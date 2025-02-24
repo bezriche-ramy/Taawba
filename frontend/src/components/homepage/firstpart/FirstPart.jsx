@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBarButton from '../navbar/NavBarButton';
+import NavBarButton from '../../../components/navbar/NavBarButton';
 import './FirstPart.css';
 
 const FirstPart = () => {

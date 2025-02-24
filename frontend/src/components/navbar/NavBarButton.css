@@ -1,0 +1,29 @@
+.nav-button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-button.primary {
+  background: #00875A;
+  border: none;
+  color: white;
+}
+
+.nav-button.primary:hover {
+  background: #006d48;
+}
+
+.nav-button.secondary {
+  background: #F5E1C8;
+  color: #00875A;
+  border: 2px solid #00875A;
+}
+
+.nav-button.secondary:hover {
+  background: #00875A;
+  color: white;
+}
