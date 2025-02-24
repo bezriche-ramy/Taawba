@@ -1,14 +1,15 @@
 import React from 'react';
 import NavBarMain from '../components/navbar/NavBarMain';
 import FirstPart from '../components/firstpart/FirstPart';
-import CardMain from '../components/cards/cardmain';
+import Cards from '../components/cards/Cards';
+import './home.css';
 
 const Home = () => {
   return (
-    <div>
+    <div className="home-container">
       <NavBarMain />
       <FirstPart />
-      <CardMain />
+      <Cards />
     </div>
   );
 };

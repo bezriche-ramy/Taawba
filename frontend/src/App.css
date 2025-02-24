@@ -1,6 +1,6 @@
 #root {
-  max-width: 1440px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
   padding: 0;
   text-align: center;
 }
@@ -44,6 +44,7 @@
 .app {
   min-height: 100vh;
   width: 100%;
-  background-color: #F5E1C8;
-  color: #333333;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow: hidden;
 }

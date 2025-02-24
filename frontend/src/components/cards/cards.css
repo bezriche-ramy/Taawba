@@ -1,0 +1,117 @@
+.features-section {
+  padding: 6rem 0;
+  background-color: var(--primary-color);
+  text-align: center;
+  width: 100%;
+  margin: 0;
+}
+
+.features-header {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  padding: 0 5%;
+}
+
+.welcome-text {
+  font-size: 1rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.features-header h2 {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  color: var(--secondary-color);
+}
+
+.features-header p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.cards-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  overflow-x: auto; /* Allow horizontal scroll on small screens */
+  -ms-overflow-style: none;  /* Hide scrollbar IE and Edge */
+  scrollbar-width: none;  /* Hide scrollbar Firefox */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cards-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome, Safari, Opera */
+}
+
+.feature-card {
+  flex: 0 0 auto; /* Prevent cards from shrinking */
+  width: 300px; /* Fixed width for consistency */
+  min-width: 300px;
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-logo img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+}
+
+.card-text h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.card-text p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.features-buttons {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .cards-container {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+  
+  .feature-card {
+    width: 280px;
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    padding: 0 0.5rem;
+  }
+  
+  .feature-card {
+    width: 260px;
+    min-width: 260px;
+  }
+}

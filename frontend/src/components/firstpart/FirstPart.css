@@ -1,26 +1,34 @@
 .hero-section {
-  height: 100vh;
-  width: 100vw;
-  background-image: url('https://t4.ftcdn.net/jpg/04/98/66/89/360_F_498668967_D9AftUBPbA8sv4Xg0UFAChOUxN0NCi0l.jpg');
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('https://i.ibb.co/gbcn8Pj2/firstbackground.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0;
+  margin: 0;
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
   overflow: hidden;
 }
 
+.features-section {
+  padding: 4rem 2rem;
+  background-color: #F5E1C8;
+  text-align: center;
+  width: 100%;
+}
+
 .hero-content {
-  max-width: 600px;
-  margin-left: 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 5%;
+  text-align: left;
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: bold;
   color: white;
   margin-bottom: 1.5rem;
@@ -60,4 +68,19 @@
 .hero-buttons .nav-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
 }
