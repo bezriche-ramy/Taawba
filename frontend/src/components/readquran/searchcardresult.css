@@ -1,0 +1,52 @@
+.search-result-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #009688;
+  border-radius: 8px;
+  padding: 1.5rem;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  cursor: pointer;
+}
+
+.search-result-card:hover {
+  background-color: #00877a;
+}
+
+.surah-number {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.surah-info {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.surah-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.surah-translation {
+  font-size: 1rem;
+  margin: 0.25rem 0;
+  opacity: 0.9;
+}
+
+.ayah-count {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  opacity: 0.8;
+}
+
+.arabic-name {
+  font-size: 2rem;
+  margin-top: auto;
+  text-align: center;
+  padding-top: 1rem;
+}

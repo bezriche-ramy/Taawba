@@ -1,0 +1,28 @@
+.surah-container {
+  min-height: 100vh;
+  background-color: #F5E1C8;
+}
+
+.surah-content {
+  display: flex;
+  position: relative;
+  height: calc(100vh - 60px);
+}
+
+.sidebar-toggle {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  z-index: 100;
+  padding: 10px;
+  background: #009688;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}

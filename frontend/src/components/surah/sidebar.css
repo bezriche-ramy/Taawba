@@ -1,0 +1,126 @@
+.sidebar {
+  width: 300px;
+  height: 350px; /* Reduced from 450px */
+  background-color: #009688;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 120px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  border-radius: 0 45px 45px 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 3px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-fixed-content {
+  padding: 10px 15px 0; /* Reduced top padding */
+  background-color: #009688;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 6px 12px; /* Reduced padding */
+  border: none;
+  border-radius: 20px;
+  font-size: 12px; /* Smaller font */
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.table-header {
+  display: flex;
+  padding: 8px 0; /* Reduced padding */
+  font-weight: 500;
+  font-size: 12px; /* Smaller font */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.col-surah { flex: 1; }
+.col-verse { width: 60px; text-align: center; }
+
+.surah-list-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 15px;
+}
+
+.surah-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 0; /* Even smaller padding */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  max-height: 30px; /* Much smaller height */
+}
+
+.surah-details {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* Smaller gap */
+  flex: 1;
+}
+
+.surah-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* Reduced from 2px */
+}
+
+.surah-number {
+  opacity: 0.7;
+  font-size: 10px; /* Even smaller */
+  width: 15px; /* Smaller width */
+}
+
+.name {
+  font-size: 10px; /* Even smaller */
+  line-height: 1; /* Added for better text spacing */
+}
+
+.arabic {
+  font-size: 8px; /* Even smaller */
+  opacity: 0.7;
+  line-height: 1; /* Added for better text spacing */
+}
+
+.verse-number {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1px 4px; /* Smaller padding */
+  border-radius: 8px;
+  font-size: 9px; /* Even smaller */
+  max-width: 30px; /* Smaller width */
+  text-align: center;
+}
+
+/* Remove hover effect */
+.surah-item:hover {
+  background: none;
+}
+
+.surah-item.selected {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Scrollbar styling */
+.surah-list-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.surah-list-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.surah-list-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}

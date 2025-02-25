@@ -1,15 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import CardLogo from './cardlogo';
 import CardTexte from './cardstexte';
 import NavBarButton from '../navbar/NavBarButton';
 import './cards.css';
 
 const CardMain = () => {
+  const navigate = useNavigate();
+  
   const cardsData = [
     {
       image: "https://c1.wallpaperflare.com/preview/682/173/209/quran-ramadhan-muslim-islamic-religious-mubarak.jpg",
       title: "Read the Quran Anytime, Anywhere",
-      description: "Access the Quran with ease and convenience."
+      description: "Access the Quran with ease and convenience.",
+      onClick: () => navigate('/readquran')
     },
     {
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Yasser_Al-Dosari.jpg/330px-Yasser_Al-Dosari.jpg",
@@ -43,7 +47,12 @@ const CardMain = () => {
       
       <div className="cards-container">
         {cardsData.map((card, index) => (
-          <div key={index} className="feature-card">
+          <div 
+            key={index} 
+            className="feature-card"
+            onClick={card.onClick}
+            style={{ cursor: card.onClick ? 'pointer' : 'default' }}
+          >
             <CardLogo imageSrc={card.image} altText={card.title} />
             <CardTexte title={card.title} description={card.description} />
           </div>

@@ -1,0 +1,213 @@
+[
+    {
+      "id": 1,
+      "suraName": "Al-Fatihah",
+      "translation": "The Opener",
+      "ayahCount": 7,
+      "arabicName": "الفاتحة"
+    },
+    {
+      "id": 2,
+      "suraName": "Al-Baqarah",
+      "translation": "The Cow",
+      "ayahCount": 286,
+      "arabicName": "البقرة"
+    },
+    {
+      "id": 3,
+      "suraName": "Ali 'Imran",
+      "translation": "Family of Imran",
+      "ayahCount": 200,
+      "arabicName": "آل عمران"
+    },
+    {
+      "id": 4,
+      "suraName": "An-Nisa",
+      "translation": "The Women",
+      "ayahCount": 176,
+      "arabicName": "النساء"
+    },
+    {
+      "id": 5,
+      "suraName": "Al-Ma'idah",
+      "translation": "The Table Spread",
+      "ayahCount": 120,
+      "arabicName": "المائدة"
+    },
+    {
+      "id": 6,
+      "suraName": "Al-An'am",
+      "translation": "The Cattle",
+      "ayahCount": 165,
+      "arabicName": "الأنعام"
+    },
+    {
+      "id": 7,
+      "suraName": "Al-A'raf",
+      "translation": "The Heights",
+      "ayahCount": 206,
+      "arabicName": "الأعراف"
+    },
+    {
+      "id": 8,
+      "suraName": "Al-Anfal",
+      "translation": "The Spoils of War",
+      "ayahCount": 75,
+      "arabicName": "الأنفال"
+    },
+    {
+      "id": 9,
+      "suraName": "At-Tawbah",
+      "translation": "The Repentance",
+      "ayahCount": 129,
+      "arabicName": "التوبة"
+    },
+    {
+      "id": 10,
+      "suraName": "Yunus",
+      "translation": "Jonah",
+      "ayahCount": 109,
+      "arabicName": "يونس"
+    },
+      {
+      "id": 11,
+      "suraName": "Hud",
+      "translation": "Hud",
+      "ayahCount": 123,
+      "arabicName": "هود"
+    },
+     {
+      "id": 12,
+      "suraName": "Yusuf",
+      "translation": "Joseph",
+      "ayahCount": 111,
+      "arabicName": "يوسف"
+    },
+     {
+      "id": 13,
+      "suraName": "Ar-Ra'd",
+      "translation": "The Thunder",
+      "ayahCount": 43,
+      "arabicName": "الرعد"
+    },
+     {
+      "id": 14,
+      "suraName": "Ibrahim",
+      "translation": "Abraham",
+      "ayahCount": 52,
+      "arabicName": "إبراهيم"
+    },
+     {
+      "id": 15,
+      "suraName": "Al-Hijr",
+      "translation": "The Rocky Tract",
+      "ayahCount": 99,
+      "arabicName": "الحجر"
+    },
+     {
+      "id": 16,
+      "suraName": "An-Nahl",
+      "translation": "The Bee",
+      "ayahCount": 128,
+      "arabicName": "النحل"
+    },
+     {
+      "id": 17,
+      "suraName": "Al-Isra",
+      "translation": "The Night Journey",
+      "ayahCount": 111,
+      "arabicName": "الإسراء"
+    },
+     {
+      "id": 18,
+      "suraName": "Al-Kahf",
+      "translation": "The Cave",
+      "ayahCount": 110,
+      "arabicName": "الكهف"
+    },
+     {
+      "id": 19,
+      "suraName": "Maryam",
+      "translation": "Mary",
+      "ayahCount": 98,
+      "arabicName": "مريم"
+    },
+     {
+      "id": 20,
+      "suraName": "Taha",
+      "translation": "Ta-Ha",
+      "ayahCount": 135,
+      "arabicName": "طه"
+    },
+       {
+      "id": 21,
+      "suraName": "Al-Anbya",
+      "translation": "The Prophets",
+      "ayahCount": 112,
+      "arabicName": "الأنبياء"
+    },
+       {
+      "id": 22,
+      "suraName": "Al-Hajj",
+      "translation": "The Pilgrimage",
+      "ayahCount": 78,
+      "arabicName": "الحج"
+    },
+       {
+      "id": 23,
+      "suraName": "Al-Mu'minun",
+      "translation": "The Believers",
+      "ayahCount": 118,
+      "arabicName": "المؤمنون"
+    },
+       {
+      "id": 24,
+      "suraName": "An-Nur",
+      "translation": "The Light",
+      "ayahCount": 64,
+      "arabicName": "النور"
+    },
+         {
+      "id": 25,
+      "suraName": "Al-Furqan",
+      "translation": "The Criterion",
+      "ayahCount": 77,
+      "arabicName": "الفرقان"
+    },
+         {
+      "id": 26,
+      "suraName": "Ash-Shu'ara",
+      "translation": "The Poets",
+      "ayahCount": 227,
+      "arabicName": "الشعراء"
+    },
+         {
+      "id": 27,
+      "suraName": "An-Naml",
+      "translation": "The Ant",
+      "ayahCount": 93,
+      "arabicName": "النمل"
+    },
+           {
+      "id": 28,
+      "suraName": "Al-Qasas",
+      "translation": "The Stories",
+      "ayahCount": 88,
+      "arabicName": "القصص"
+    },
+           {
+      "id": 29,
+      "suraName": "Al-Ankabut",
+      "translation": "The Spider",
+      "ayahCount": 69,
+      "arabicName": "العنكبوت"
+    },
+           {
+      "id": 30,
+      "suraName": "Ar-Rum",
+      "translation": "The Romans",
+      "ayahCount": 60,
+      "arabicName": "الروم"
+    }
+  ]
+  

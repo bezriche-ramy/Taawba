@@ -1,0 +1,136 @@
+.search-result-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.search-result-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-result-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.surah-number {
+  background: #009688;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.surah-info {
+  flex: 1;
+}
+
+.surah-name {
+  margin: 0;
+  color: #009688;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.surah-translation {
+  margin: 5px 0;
+  color: #666;
+}
+
+.ayah-count {
+  margin: 5px 0;
+  color: #888;
+  font-size: 0.9em;
+}
+
+.arabic-name {
+  font-size: 1.5em;
+  color: #333;
+  text-align: right;
+  min-width: 100px;
+}
+
+.align-items {
+  align-items: center;
+  display: flex;
+}
+
+.verse-count {
+  opacity: 0.8;
+  font-size: 0.8em;
+}
+
+.arabic-name {
+  flex-direction: column;
+  display: flex;
+}
+
+.surah-name {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.surah-item.selected {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.surah-item:hover {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  padding: 10px 15px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.surah-item {
+  height: calc(100% - 70px);
+  overflow-y: auto;
+}
+
+.surah-list {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+  padding: 10px 15px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.list-header {
+  border-radius: 4px;
+  border: none;
+  padding: 8px;
+  width: 100%;
+}
+
+.search-section input {
+  padding: 15px;
+}
+
+.search-section {
+  transform: translateX(0);
+}
+
+.sidebar.open {
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  color: white;
+  height: 100%;
+  background-color: #009688;
+  width: 300px;
+}
+
+.sidebar {
+  color: inherit;
+  text-decoration: none;
+}
