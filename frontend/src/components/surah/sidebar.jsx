@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import quranData from '../../pages/quran.json';
 import './sidebar.css';
 
-const Sidebar = ({ isOpen, selectedSurahId }) => {
+const Sidebar = ({ selectedSurahId }) => {
   const [selectedSurah, setSelectedSurah] = useState(selectedSurahId);
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const Sidebar = ({ isOpen, selectedSurahId }) => {
   );
 
   return (
-    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+    <div className="sidebar">
       <div className="sidebar-fixed-content">
         <div className="search-box">
           <input

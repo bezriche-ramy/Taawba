@@ -1,52 +1,70 @@
+.search-result-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Ensures the link fills the card */
+  transition: transform 0.2s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.search-result-card-link:hover {
+  transform: scale(1.03); /* Slight scale up on hover */
+}
+
 .search-result-card {
   display: flex;
   flex-direction: column;
-  background-color: #009688;
-  border-radius: 8px;
+  background-color: #009688; /* Green background */
+  border-radius: 12px; /* More rounded corners */
   padding: 1.5rem;
-  color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white; /* White text for better readability */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
   height: 100%;
-  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth background transition */
 }
 
 .search-result-card:hover {
-  background-color: #00877a;
+  background-color: #00877a; /* Darker green on hover */
 }
 
-.surah-number {
-  font-size: 2rem;
-  font-weight: bold;
+.surah-header {
+  display: flex;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
-.surah-info {
-  text-align: center;
-  margin: 0.5rem 0;
+.surah-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white; /* Primary color for emphasis */
+  margin-right: 0.75rem;
 }
 
 .surah-name {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.25rem;
+  font-weight: 600;
   margin: 0;
-  margin-bottom: 0.5rem;
+}
+
+.surah-details {
+  margin-bottom: 1.5rem;
 }
 
 .surah-translation {
   font-size: 1rem;
-  margin: 0.25rem 0;
-  opacity: 0.9;
+  color: #f0f0f0; /* Slightly muted color */
+  margin: 0.5rem 0;
 }
 
 .ayah-count {
-  font-size: 0.9rem;
-  margin: 0.5rem 0;
-  opacity: 0.8;
+  font-size: 0.875rem;
+  color: #e0e0e0;
+  margin: 0;
 }
 
 .arabic-name {
   font-size: 2rem;
   margin-top: auto;
   text-align: center;
+  color: white;
   padding-top: 1rem;
+  border-top: 1px solid #eee; /* Subtle divider */
 }

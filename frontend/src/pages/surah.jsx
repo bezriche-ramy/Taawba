@@ -8,7 +8,6 @@ import './surah.css';
 const Surah = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [currentSurah, setCurrentSurah] = useState(null);
 
   useEffect(() => {
@@ -20,27 +19,24 @@ const Surah = () => {
     setCurrentSurah(surah);
   }, [id, navigate]);
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
   return (
     <div className="surah-container">
       <NavBarMain />
-      <div className={`surah-content ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-        <button className="sidebar-toggle" onClick={toggleSidebar}>
-          {isSidebarOpen ? '←' : '→'}
-        </button>
-        <Sidebar isOpen={isSidebarOpen} selectedSurahId={parseInt(id)} />
+      <div className="surah-content">
         <div className="main-content">
           {currentSurah && (
             <div className="surah-header">
               <h1>{currentSurah.suraName}</h1>
               <h2>{currentSurah.arabicName}</h2>
-              <p>{currentSurah.translation}</p>
-              <p>Verses: {currentSurah.ayahCount}</p>
+              <div className="surah-info">
+                <p className="translation">{currentSurah.translation}</p>
+                <p className="verse-count">Verses: {currentSurah.ayahCount}</p>
+              </div>
             </div>
           )}
+        </div>
+        <div className="bottom-sidebar">
+          <Sidebar selectedSurahId={parseInt(id)} />
         </div>
       </div>
     </div>
