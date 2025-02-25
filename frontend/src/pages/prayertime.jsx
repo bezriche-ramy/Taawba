@@ -3,6 +3,7 @@ import LocationSelector from '../components/prayertime/LocationSelector';
 import PrayerCard from '../components/prayertime/PrayerCard';
 import NextPrayer from '../components/prayertime/NextPrayer'; // Import the NextPrayer component
 import './prayertime.css';
+import NavBarMain from '../components/navbar/NavBarMain'; // Import NavBarMain
 
 const PrayerTime = () => {
   const [selectedCountry, setSelectedCountry] = useState('Algeria');
@@ -81,6 +82,7 @@ const PrayerTime = () => {
 
   return (
     <div className="prayer-time-container">
+      <NavBarMain /> {/* Include NavBarMain component */}
       <div className="prayer-header">
         <div className="header-left">
           <h1>Prayer Times</h1>
