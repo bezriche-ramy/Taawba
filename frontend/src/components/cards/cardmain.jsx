@@ -33,7 +33,8 @@ const CardMain = () => {
     {
       image: "https://img.freepik.com/free-photo/muslim-boy-learning-how-make-dua-allah_53876-25223.jpg",
       title: "Prayer Times",
-      description: "Stay updated with accurate prayer times and notifications."
+      description: "Stay updated with accurate prayer times and notifications.",
+      onClick: () => navigate('/prayertime')
     }
   ];
 

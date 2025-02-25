@@ -1,0 +1,33 @@
+.upcoming-prayer {
+  background-color: #009688;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.upcoming-prayer-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.prayer-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.prayer-name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.prayer-time {
+  font-size: 1.2em;
+}
+
+.countdown {
+  font-size: 1.5em;
+  color: white;
+}

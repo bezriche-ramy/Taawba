@@ -1,0 +1,37 @@
+.location-selector {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  gap: 20px; /* Add some space between the select elements */
+  margin: 1rem 0;
+}
+
+.select-group {
+  flex: 1;
+  text-align: center; /* Center the select element within its group */
+}
+
+.location-select {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 45px; /* Increased border radius */
+  font-size: 16px;
+  color: #333;
+  background-color: #f8f8f8;
+  appearance: none; /* Remove default arrow in some browsers */
+  -webkit-appearance: none; /* Remove default arrow in Safari and Chrome */
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.location-select:hover,
+.location-select:focus {
+  border-color: #66afe9;
+  outline: none;
+}
+
+/* Style the arrow (optional) */
+.location-select::-ms-expand {
+  display: none; /* Hide the default arrow in IE */
+}

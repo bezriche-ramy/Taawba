@@ -1,0 +1,36 @@
+.prayer-card {
+  background-color: #009688;
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  color: white;
+}
+
+.prayer-card:hover {
+  transform: translateY(-2px);
+}
+
+.prayer-card h3 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.prayer-card p {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.prayer-card.upcoming {
+  background-image: url('https://images.pexels.com/photos/7129601/pexels-photo-7129601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.prayer-card.upcoming h3,
+.prayer-card.upcoming p {
+  color: black;
+}

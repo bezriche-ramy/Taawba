@@ -1,0 +1,14 @@
+[
+  {
+    "country": "Algeria",
+    "cities": ["Algiers", "Oran", "Constantine"]
+  },
+  {
+    "country": "Egypt",
+    "cities": ["Cairo", "Alexandria", "Giza"]
+  },
+  {
+    "country": "Saudi Arabia",
+    "cities": ["Riyadh", "Jeddah", "Mecca"]
+  }
+]
