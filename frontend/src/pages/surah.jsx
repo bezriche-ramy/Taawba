@@ -2,43 +2,50 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import NavBarMain from '../components/navbar/NavBarMain';
 import Sidebar from '../components/surah/sidebar';
-import quranData from './quran.json';
+import Ayat from '../components/surah/ayat';
+import { FaBars } from 'react-icons/fa';
 import './surah.css';
 
 const Surah = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [currentSurah, setCurrentSurah] = useState(null);
+  const [surahId, setSurahId] = useState(parseInt(id) || 1);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
 
   useEffect(() => {
-    const surah = quranData.find(s => s.id === parseInt(id));
-    if (!surah) {
-      navigate('/readquran'); // Redirect if surah not found
+    const numId = parseInt(id);
+    if (!numId || numId < 1 || numId > 114) {
+      navigate('/surah/1');
       return;
     }
-    setCurrentSurah(surah);
+    setSurahId(numId);
+    
+    // Add responsive check
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 992);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, [id, navigate]);
 
   return (
-    <div className="surah-container">
+    <div className="surah-page">
       <NavBarMain />
-      <div className="surah-content">
-        <div className="main-content">
-          {currentSurah && (
-            <div className="surah-header">
-              <h1>{currentSurah.suraName}</h1>
-              <h2>{currentSurah.arabicName}</h2>
-              <div className="surah-info">
-                <p className="translation">{currentSurah.translation}</p>
-                <p className="verse-count">Verses: {currentSurah.ayahCount}</p>
-              </div>
-            </div>
-          )}
-        </div>
-        <div className="bottom-sidebar">
-          <Sidebar selectedSurahId={parseInt(id)} />
-        </div>
+      
+      <div className="surah-layout">
+        <Sidebar selectedSurahId={surahId} />
+        <main className="main-content">
+          <Ayat surahNumber={surahId} />
+        </main>
       </div>
+      
+      {isMobile && (
+        <div className="mobile-indicator">
+          <FaBars />
+          <span>Swipe right to navigate</span>
+        </div>
+      )}
     </div>
   );
 };

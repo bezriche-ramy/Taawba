@@ -26,15 +26,22 @@
   border-radius: 0 5px 5px 0;
 }
 
+/* Adjust the main content to accommodate the sidebar in the middle */
 .main-content {
   flex-grow: 1;
   padding: 20px;
-  margin-left: 0;
+  margin-left: 70px; /* Adjust based on collapsed sidebar width */
+  transition: margin-left 0.3s ease;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 350px; /* Adjust space for centered header */
-  padding-bottom: 150px; /* Adjust this value based on your sidebar height */
+  padding-top: 80px; /* Reduced padding since header is gone */
+  padding-bottom: 40px;
+}
+
+/* When sidebar is expanded */
+.quran-sidebar.expanded ~ .main-content {
+  margin-left: 300px;
 }
 
 .surah-header {
@@ -98,4 +105,128 @@
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
   z-index: 90; /* Lower than surah-header to ensure header stays on top */
   display: block; /* Restore sidebar visibility */
+}
+
+.surah-page {
+  min-height: 100vh;
+  background-color: #F5E1C8; /* Changed from #f5f5f5 to #F5E1C8 */
+}
+
+/* Update padding since the header is gone */
+.surah-layout {
+  padding-top: 80px; /* Reduced from 280px since we no longer have the header */
+  display: flex;
+}
+
+/* Adjust the sidebar positioning if needed */
+.sidebar {
+  top: 180px; /* Adjust if needed to prevent overlap with header */
+}
+
+.sidebar-wrapper {
+  flex-shrink: 0;
+  width: 300px;
+}
+
+.sidebar-toggle-button {
+  display: none;
+  position: fixed;
+  bottom: auto; /* Remove bottom positioning */
+  top: 50%; /* Position at 50% from the top */
+  left: 20px;
+  transform: translateY(-50%); /* Center it vertically */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #009688;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 110;
+}
+
+/* Add a hint for mobile users */
+.mobile-indicator {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 150, 136, 0.8);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: fadeOut 3s forwards 2s;
+  z-index: 1000;
+}
+
+@keyframes fadeOut {
+  from { opacity: 0.8; }0px; /* Less padding on smaller screens */
+  to { opacity: 0; }
+} 
+  .main-content {
+/* Responsive styles */
+@media (max-width: 992px) {
+  .sidebar-toggle-button {
+    display: flex;
+    bottom: 50%; /* Position the toggle button in the middle left */
+    transform: translateY(50%);surah-layout {
+  }   padding-top: 60px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}  }    display: none;  .mobile-indicator {  }    height: calc(100vh - 80px);    top: 80px; /* Reduced from 250px */  .sidebar {@media (min-width: 993px) {/* Adjust sidebar positioning now that header is gone */}  }    padding: 10px;  .main-content {@media (max-width: 576px) {}  }    opacity: 0.7;    margin-left: 0;  .quran-sidebar.expanded ~ .main-content {    }    padding: 15px;    margin-left: 0;  .main-content {  
+  .main-content {
+    padding: 5px;
+    min-height: calc(100vh - 60px); /* Ensure the content area fills the screen */
+  }
+  
+  /* Adjust dynamically when sidebar expands */
+  .quran-sidebar.expanded ~ .main-content {
+    transform: translateX(60px);
+    width: calc(100% - 60px);
+  }
+}
+
+/* Adjust sidebar positioning now that header is gone */
+@media (min-width: 993px) {
+  .sidebar {
+    top: 80px; /* Reduced from 250px */
+    height: calc(100vh - 80px);
+  }
 }

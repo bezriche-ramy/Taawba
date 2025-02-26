@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import ReadQuran from './pages/readquran';
 import Surah from './pages/surah';
@@ -9,14 +9,14 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/readquran" element={<ReadQuran />} />
         <Route path="/surah/:id" element={<Surah />} />
         <Route path="/prayertime" element={<PrayerTime />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
