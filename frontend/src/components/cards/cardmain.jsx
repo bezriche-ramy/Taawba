@@ -18,7 +18,8 @@ const CardMain = () => {
     {
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Yasser_Al-Dosari.jpg/330px-Yasser_Al-Dosari.jpg",
       title: "Listen to Renowned Quran Reciters",
-      description: "Enjoy beautiful recitations by top reciters."
+      description: "Enjoy beautiful recitations by top reciters.",
+      onClick: () => navigate('/selectreader')
     },
     {
       image: "https://imgs.search.brave.com/ghAwSf8UNrV9iSQCPdmRB1qUmZD0WgoYqggoWj6gOb0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFGOXBmU2d2YUwu/anBn",

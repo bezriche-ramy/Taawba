@@ -48,3 +48,14 @@
   color: var(--text-color);
   overflow: hidden;
 }
+
+/* Page layout with navbar */
+.page-content {
+  padding-top: 70px; /* Add space for fixed navbar */
+  min-height: calc(100vh - 70px);
+}
+
+.select-reader-page {
+  min-height: 100vh;
+  background-color: #F5E1C8; /* Updated background color */
+}

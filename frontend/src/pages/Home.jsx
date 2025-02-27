@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBarMain from '../components/navbar/NavBarMain';
+import CardMain from '../components/cards/cardmain';
 import FirstPart from '../components/homepage/firstpart/FirstPart';
-import Cards from '../components/cards/cardmain';
 import SecondPart from '../components/homepage/secondpart/secondpart';
 import ThirdPart from '../components/homepage/3rdpart/3rdpart';
 import Footer from '../components/homepage/fotter/fotter';
@@ -9,13 +9,15 @@ import './home.css';
 
 const Home = () => {
   return (
-    <div className="home-container">
+    <div className="home-page">
       <NavBarMain />
-      <FirstPart />
-      <Cards />
-      <SecondPart />
-      <ThirdPart />
-      <Footer />
+      <div className="page-content">
+        <CardMain />
+        <FirstPart />
+        <SecondPart />
+        <ThirdPart />
+        <Footer />
+      </div>
     </div>
   );
 };

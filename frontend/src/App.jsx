@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import ReadQuran from './pages/readquran';
 import Surah from './pages/surah';
 import PrayerTime from './pages/prayertime';
+import SelectReaderPage from './pages/SelectReaderPage';
 import './animations.css';
 import './App.css';
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/readquran" element={<ReadQuran />} />
         <Route path="/surah/:id" element={<Surah />} />
         <Route path="/prayertime" element={<PrayerTime />} />
+        <Route path="/selectreader" element={<SelectReaderPage />} />
       </Routes>
     </Router>
   );
