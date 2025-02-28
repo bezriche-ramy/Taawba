@@ -1,13 +1,14 @@
 .location-selector {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  gap: 20px; /* Add some space between the select elements */
-  margin: 1rem 0;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .select-group {
-  flex: 1;
+  width: 100%;
   text-align: center; /* Center the select element within its group */
 }
 
@@ -34,4 +35,15 @@
 /* Style the arrow (optional) */
 .location-select::-ms-expand {
   display: none; /* Hide the default arrow in IE */
+}
+
+@media (min-width: 768px) {
+  .location-selector {
+    flex-direction: row;
+    max-width: 600px;
+  }
+  
+  .select-group {
+    flex: 1;
+  }
 }
