@@ -3,9 +3,10 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: "./",
+  base: "/",
   server: {
-    historyApiFallback: true, // Redirige les requêtes vers index.html
+    port: 3000,
+    historyApiFallback: true,
   },
   build: {
     outDir: "dist",
