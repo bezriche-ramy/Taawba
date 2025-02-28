@@ -14,7 +14,7 @@ const AudioPlayer = ({ audioUrl, chapter }) => {
   const animationRef = useRef(null);
 
   useEffect(() => {
-    // Reset and load new audio when URL changes
+    // Reset and load new audio when URL changes.
     if (audioRef.current) {
       audioRef.current.pause();
       setIsPlaying(false);
