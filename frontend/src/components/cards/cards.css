@@ -1,5 +1,5 @@
 .features-section {
-  padding: 6rem 0;
+  padding: 2rem;
   background-color: var(--primary-color);
   text-align: center;
   width: 100%;
@@ -33,11 +33,12 @@
 }
 
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Show 3 cards per row by default */
-  gap: 3rem; /* Increase gap between cards */
-  width: 90%;
-  max-width: 1400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   justify-items: center; /* Center items horizontally */
@@ -45,6 +46,7 @@
 }
 
 .feature-card {
+  flex: 0 1 300px;
   width: 100%;
   max-width: 350px; /* Slightly larger cards */
   min-height: 320px; /* Ensure consistent height */
@@ -125,7 +127,10 @@
 
 @media (max-width: 768px) {
   .features-section {
-    padding: 3rem 0;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .features-header {
@@ -137,16 +142,23 @@
   }
 
   .cards-container {
-    grid-template-columns: 1fr; /* Single column on mobile */
     width: 100%;
-    gap: 2rem;
-    padding: 1rem; /* Increase padding */
+    padding: 1rem 5% 1rem 0; /* Reduced padding on right, keeping left at 0 */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
+    margin-left: 10%; /* Add margin on the left to shift cards */
+    gap: 1rem;
   }
 
   .feature-card {
+    flex: 0 1 100%;
+    max-width: 350px;
     padding: 1.5rem;
-    width: 100%;
-    max-width: 320px; /* Adjust max-width for mobile */
+    width: 85%;
+    margin: 0 0 1rem 0; /* Remove auto margin and set left margin to 0 */
+    min-width: 250px;
+    max-width: 320px;
   }
 }
 
@@ -162,12 +174,17 @@
   }
 
   .cards-container {
-    padding: 0 0.5rem;
+    padding: 1rem 0;
+    margin-left: 8%; /* Slightly less margin on very small screens */
   }
 
   .feature-card {
     padding: 1rem;
-    max-width: 280px; /* Slightly smaller on very small screens */
+    max-width: 320px;
+    width: 80%;
+    margin: 0 0 1rem 0; /* Remove auto margin */
+    min-width: 240px;
+    max-width: 300px;
   }
 
   .card-logo img {
