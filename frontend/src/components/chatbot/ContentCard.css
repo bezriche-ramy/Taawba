@@ -1,0 +1,198 @@
+.content-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2a3950;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 0 8px;
+  flex: 1;
+  min-width: 0; /* Prevents flexbox items from expanding beyond container */
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.content-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #5cb85c, #28a745);
+}
+
+.content-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(42, 57, 80, 0) 0%, rgba(32, 43, 61, 0.6) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.card-content {
+  flex-grow: 1;
+  min-width: 0;
+  padding-right: 10px;
+  z-index: 2;
+}
+
+.card-title {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(92, 184, 92, 0.3);
+  background: linear-gradient(135deg, rgba(92, 184, 92, 0.15) 0%, rgba(41, 169, 70, 0.15) 100%);
+  box-shadow: 0 0 10px rgba(92, 184, 92, 0.2);
+}
+
+.card-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  z-index: -1;
+}
+
+.card-icon svg {
+  color: #5cb85c;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* Prayer icon - stylized prayer hands */
+.prayer-icon .icon-inner {
+  position: relative;
+  width: 22px;
+  height: 22px;
+}
+
+.prayer-icon .icon-inner:before,
+.prayer-icon .icon-inner:after {
+  content: '';
+  position: absolute;
+  background: #5cb85c;
+  border-radius: 50%;
+}
+
+.prayer-icon .icon-inner:before {
+  width: 10px;
+  height: 18px;
+  left: 2px;
+  top: 2px;
+  border-radius: 10px;
+  transform: rotate(-15deg);
+}
+
+.prayer-icon .icon-inner:after {
+  width: 10px;
+  height: 18px;
+  right: 2px;
+  top: 2px;
+  border-radius: 10px;
+  transform: rotate(15deg);
+}
+
+/* Crescent icon */
+.crescent-icon .icon-inner {
+  position: relative;
+  width: 22px;
+  height: 22px;
+}
+
+.crescent-icon .icon-inner:before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 4px 0px 0 0 #5cb85c;
+  top: 2px;
+  left: 2px;
+}
+
+/* Mosque icon */
+.mosque-icon .icon-inner {
+  position: relative;
+  width: 22px;
+  height: 22px;
+}
+
+.mosque-icon .icon-inner:before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 10px;
+  background: #5cb85c;
+  bottom: 0;
+  left: 2px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.mosque-icon .icon-inner:after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 12px;
+  background: #5cb85c;
+  bottom: 10px;
+  left: 7px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+/* Default fallback icon */
+.default-icon .icon-inner {
+  width: 6px;
+  height: 6px;
+  background: #5cb85c;
+  border-radius: 50%;
+  box-shadow: 0 -10px 0 #5cb85c, 0 10px 0 #5cb85c, -10px 0 0 #5cb85c, 10px 0 0 #5cb85c;
+}
+
+.content-card:hover .card-icon {
+  background: linear-gradient(135deg, rgba(92, 184, 92, 0.3) 0%, rgba(41, 169, 70, 0.3) 100%);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 15px rgba(92, 184, 92, 0.5);
+}

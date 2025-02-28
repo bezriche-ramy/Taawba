@@ -1,0 +1,223 @@
+.chatbot-container {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  background-color: #222;
+}
+
+.chatbot-header {
+  padding: 16px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #218838;
+}
+
+.messages-container {
+  flex-grow: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: #1a1f2e;
+}
+
+.welcome-message {
+  text-align: center;
+  color: #b8b8b8;
+  margin: 20px 0;
+  font-style: italic;
+}
+
+/* Card text styling */
+.card-text {
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* For links within card text */
+.card-text a {
+  color: #5cb85c;
+  text-decoration: none;
+}
+
+.card-text a:hover {
+  text-decoration: underline;
+}
+
+.islamic-app-container {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  background-color: #1a1f2e;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.islamic-app-header {
+  padding: 16px;
+  position: relative;
+  text-align: center;
+  background: linear-gradient(135deg, #243447 0%, #1a2736 100%);
+  color: white;
+  overflow: hidden;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-icon {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5cb85c;
+}
+
+.islamic-app-header h1 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.geometric-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.content-cards-container {
+  display: flex;
+  padding: 16px;
+  background-color: #1a1f2e;
+  position: relative;
+  gap: 10px; /* Adds consistent spacing between cards */
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari, Opera */
+.content-cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+.content-cards-container::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(to right, rgba(26, 31, 46, 0) 0%, rgba(26, 31, 46, 0.8) 100%);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.content-section {
+  background-color: #1a1f2e;
+}
+
+.content-section-header {
+  padding: 12px 16px 0;
+}
+
+.content-section-header h2 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.content-section-header h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 30px;
+  background: #5cb85c;
+  border-radius: 2px;
+}
+
+.app-footer {
+  padding: 16px;
+  background-color: #243447;
+  border-top: 1px solid #2d3b4d;
+}
+
+.disclaimer-text {
+  font-size: 0.8rem;
+  color: #a0a0a0;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+}
+
+.subscribe-link {
+  color: #5cb85c;
+  text-decoration: none;
+}
+
+.subscribe-link:hover {
+  text-decoration: underline;
+}
+
+.guest-mode {
+  color: #a0a0a0;
+  display: flex;
+  align-items: center;
+}
+
+.guest-mode::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #5cb85c;
+  margin-right: 6px;
+}
+
+/* Scrollbar styling */
+.messages-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+  background: #1a1f2e;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background-color: #5cb85c;
+  border-radius: 6px;
+}

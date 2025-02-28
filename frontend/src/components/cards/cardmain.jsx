@@ -29,9 +29,10 @@ const CardMain = () => {
       onClick: () => navigate('/challenges')
     },
     {
-      image: "https://images.pexels.com/photos/2989625/pexels-photo-2989625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      title: "Join Our Community",
-      description: "Connect with others and share your Ramadan journey progress and challenges."
+      image: "https://imgs.search.brave.com/qZRwHhTAnttHrwPM1VuyTyNFHPhZXDGZXyFfU2_-99Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cHJvZC53ZWJzaXRl/LWZpbGVzLmNvbS82/NzNiNWU0ODM5YTZh/ZDFlODNjZjNhMGUv/Njc1YzY0NTA0MmRl/NzBkNjQ2ZjFkOGM1/X2hhcXFib3Qud2Vi/cA", // Updated image URL for AI Assistant
+      title: "Islamic AI Assistant",
+      description: "Get answers to your Islamic questions with our AI chatbot assistant.",
+      onClick: () => navigate('/chatbot')
     },
     {
       image: "https://img.freepik.com/free-photo/muslim-boy-learning-how-make-dua-allah_53876-25223.jpg",
@@ -55,13 +56,20 @@ const CardMain = () => {
             key={index} 
             className="feature-card"
             onClick={card.onClick}
-            style={{ cursor: card.onClick ? 'pointer' : 'default' }}
+            style={{ 
+              cursor: card.onClick ? 'pointer' : 'default',
+              backgroundColor: '#ffffff',
+              position: 'relative',
+              overflow: 'visible'
+            }}
             role="button"
             tabIndex={0}
             aria-label={`Feature: ${card.title}`}
           >
             <CardLogo imageSrc={card.image} altText={card.title} />
-            <CardTexte title={card.title} description={card.description} />
+            <div style={{position: 'relative', zIndex: 20, width: '100%'}}>
+              <CardTexte title={card.title} description={card.description} />
+            </div>
           </div>
         ))}
       </div>
