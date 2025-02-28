@@ -11,14 +11,14 @@ const Home = () => {
   return (
     <div className="home-page">
       <NavBarMain />
-      <div className="page-content">
-        <CardMain />
-        <FirstPart />
+      <FirstPart />
+      <CardMain />
+        
         <SecondPart />
         <ThirdPart />
         <Footer />
       </div>
-    </div>
+    
   );
 };
 

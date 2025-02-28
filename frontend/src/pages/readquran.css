@@ -1,6 +1,5 @@
 .read-quran-container {
-  padding-top: 140px; /* Reduced from 180px */
-  padding: 2rem;
+  padding: 220px 2rem 2rem; /* Increased from 180px to accommodate new search position */
   text-align: center;
   min-height: 100vh;
   background-color: var(--primary-color);
@@ -13,7 +12,7 @@
 
 .search-results {
   max-width: 1200px;
-  margin: 14rem auto; /* increased from 12rem to 14rem */
+  margin: 2rem auto;
   padding: 0 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
