@@ -142,8 +142,19 @@
   
   .remember-me, .terms-agreement {
     display: flex;
+    margin: 0;
     align-items: center;
     gap: 0.5rem;
+  }
+  .spinner-style{
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #3498db;
+    width: 20px;
+    transform: translateY(-10px);
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
   }
   
   .forgot-password {
@@ -308,6 +319,10 @@
     .login-form-container {
       padding: 2.5rem 1.5rem;
     }
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
   
   @media screen and (max-width: 576px) {

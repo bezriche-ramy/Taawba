@@ -5,9 +5,12 @@ import { AuthHeader } from '../../components/authFront/AuthHeader';
 import { Input } from '../../components/authFront/Input';
 import { SidePicture } from '../../components/authFront/SidePicture';
 import { Button } from '../../components/authFront/Button';
+import { signUp } from '../../utils/signUp';
+
 
 const Auth = () => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -49,33 +52,53 @@ const Auth = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     const newErrors = validateForm();
     
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      console.log('Form submitted:', formData);
+      setIsLoading(true); // Set loading state to true
       
+      try {
+        if(showLogin){
+          //handle login later
+          // Set a timeout to simulate API call
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 2000);
+        } else {
+          //handle Signup
+         
+          const user = await signUp(formData.email, formData.password, formData.name);
+          if(user){
+            alert("Welcome " + user.displayName);
+            navigate('/')
+          } else {
+            alert("Error creating user");
+          }
+          setIsLoading(false);
+        }
+      } catch (error) {
+        console.error("Authentication error:", error);
+        setIsLoading(false);
+      }
     }
   };
-
-
 
   const handleCreateAccount = () => {
-    if( showLogin)
-    {
+    if(showLogin) {
       setShowLogin(false);
       console.log("showLogin", formData);
-    }
-    else{
+    } else {
       setShowLogin(true);
       console.log("showLogin", formData);
-
     }
-
   };
+
+  // CSS for the spinner
+
 
   return (
     <section className="login-section">
@@ -104,13 +127,13 @@ const Auth = () => {
             
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <Input param={'email'} type={'email'} formData={formData} handleChange={handleChange} errors={errors} />
+              <Input param={'email'} type={'email'} formData={formData} handleChange={handleChange} errors={errors} placeholder={'Enter Your Email'} />
               {errors.email && <span className="error-message">{errors.email}</span>}
             </div>
             
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <Input param={'password'} type={'password'} formData={formData} handleChange={handleChange} errors={errors} />
+              <Input param={'password'} type={'password'} formData={formData} handleChange={handleChange} errors={errors} placeholder={'Enter Your Password'} />
               {errors.password && <span className="error-message">{errors.password}</span>}
             </div>
             
@@ -139,29 +162,46 @@ const Auth = () => {
                     onChange={handleChange}
                     className={errors.agreeTerms ? 'error' : ''}
                   />
-                  <label htmlFor="agreeTerms">I agree to the Terms and Privacy Policy</label>
+                  <label htmlFor="agreeTerms" style={{margin:'0px'}}>I agree to the Terms and Privacy Policy</label>
                 </div>
                 {errors.agreeTerms && <span className="error-message">{errors.agreeTerms}</span>}
               </div>
             )}
             
-            <button type="submit" className="login-button">
-              {showLogin ? 'Sign In' : 'Create Account'}
+            <button type="submit" className="login-button" disabled={isLoading}>
+              {isLoading ? (
+                <>
+                  <div 
+                    className="spinner spinner-style" 
+                  
+                  />
+                  {showLogin ? 'Signing In...' : 'Creating Account...'}
+                </>
+              ) : (
+                showLogin ? 'Sign In' : 'Create Account'
+              )}
             </button>
           </form>
           
-          
-            <>
-              <div className="login-separator">
-                <span>Or</span>
-              </div>
-              
-              <div className="create-account-container">
-                <Button showLogin={showLogin} handler={handleCreateAccount} type={'button'} className={'create-account-button'} />
-              </div>
-            </>
+          <>
+            <div className="login-separator">
+              <span>Or</span>
+            </div>
+            
+            <div className="create-account-container">
+              <Button 
+                showLogin={showLogin} 
+                handler={handleCreateAccount} 
+                type={'button'} 
+                className={'create-account-button'} 
+                disabled={isLoading}
+              />
+            </div>
+          </>
         </div>
       </div>
+
+  
     </section>
   );
 };
