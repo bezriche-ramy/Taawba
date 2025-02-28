@@ -20,8 +20,10 @@ const NavBarMain = () => {
       </div>
 
       <div className="nav-buttons">
+
         <NavBarButton type="explore">Explore</NavBarButton>
         <NavBarButton type="signup" handleClick={goToSignUp}>Sign Up</NavBarButton>
+
       </div>
 
       <button className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
