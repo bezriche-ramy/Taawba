@@ -213,6 +213,13 @@
   .surah-english-name {
     font-size: 1.7rem;
   }
+  
+  /* Remove any mobile indicators or swipe hints if they exist */
+  .mobile-indicator,
+  .swipe-hint,
+  .mobile-navigation-hint {
+    display: none !important;
+  }
 }
 
 .surah-info-bar {
@@ -304,5 +311,12 @@
   
   .action-button {
     font-size: 1rem;
+  }
+  
+  /* Remove any mobile indicators or swipe hints if they exist */
+  .mobile-indicator,
+  .swipe-hint,
+  .mobile-navigation-hint {
+    display: none !important;
   }
 }

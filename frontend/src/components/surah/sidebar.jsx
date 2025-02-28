@@ -23,9 +23,6 @@ const Sidebar = ({ selectedSurahId }) => {
     setExpanded(!expanded);
   };
 
-  // Removed searchTerm state and filteredSurahs filter
-  // Now we'll just use the quranData directly
-
   // Create arrays for Juz and Page tabs
   const juzArray = Array.from({ length: 30 }, (_, i) => i + 1);
   const pageArray = Array.from({ length: 604 }, (_, i) => i + 1);
@@ -37,8 +34,6 @@ const Sidebar = ({ selectedSurahId }) => {
       </div>
       
       <div className="sidebar-content">
-        {/* Search box removed */}
-        
         <div className="sidebar-tabs">
           <button 
             className={`tab ${activeTab === 'Surah' ? 'active' : ''}`} 

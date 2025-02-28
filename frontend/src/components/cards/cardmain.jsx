@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CardLogo from './cardlogo';
 import CardTexte from './cardstexte';
@@ -7,6 +7,7 @@ import './cards.css';
 
 const CardMain = () => {
   const navigate = useNavigate();
+  const cardsRef = useRef(null);
   
   const cardsData = [
     {
@@ -24,7 +25,8 @@ const CardMain = () => {
     {
       image: "https://imgs.search.brave.com/ghAwSf8UNrV9iSQCPdmRB1qUmZD0WgoYqggoWj6gOb0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFGOXBmU2d2YUwu/anBn",
       title: "Join Exciting Ramadan Challenges",
-      description: "Participate in fun challenges to enhance your Ramadan."
+      description: "Participate in fun challenges to enhance your Ramadan.",
+      onClick: () => navigate('/challenges')
     },
     {
       image: "https://images.pexels.com/photos/2989625/pexels-photo-2989625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -47,16 +49,16 @@ const CardMain = () => {
         <p>Immerse yourself in the spiritual journey of Ramadan with our dedicated features. From reading the Quran to engaging challenges, we have everything you need.</p>
       </div>
       
-      <div className="cards-container">
+      <div className="cards-container" ref={cardsRef}>
         {cardsData.map((card, index) => (
           <div 
             key={index} 
             className="feature-card"
             onClick={card.onClick}
-            style={{ 
-              cursor: card.onClick ? 'pointer' : 'default',
-              margin: window.innerWidth <= 768 ? '0 0 1rem 0' : '0 auto 1rem auto' // Left alignment on mobile
-            }}
+            style={{ cursor: card.onClick ? 'pointer' : 'default' }}
+            role="button"
+            tabIndex={0}
+            aria-label={`Feature: ${card.title}`}
           >
             <CardLogo imageSrc={card.image} altText={card.title} />
             <CardTexte title={card.title} description={card.description} />

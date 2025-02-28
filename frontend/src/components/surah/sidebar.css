@@ -251,3 +251,15 @@
     padding: 5px 10px;
   }
 }
+
+/* Hide sidebar completely on phone screens */
+@media (max-width: 576px) {
+  .quran-sidebar {
+    display: none; /* Completely hide the sidebar */
+  }
+  
+  /* Hide the toggle button as well */
+  .quran-sidebar:not(.expanded) .sidebar-toggle {
+    display: none;
+  }
+}
