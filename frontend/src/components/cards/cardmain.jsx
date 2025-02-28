@@ -53,7 +53,10 @@ const CardMain = () => {
             key={index} 
             className="feature-card"
             onClick={card.onClick}
-            style={{ cursor: card.onClick ? 'pointer' : 'default' }}
+            style={{ 
+              cursor: card.onClick ? 'pointer' : 'default',
+              margin: window.innerWidth <= 768 ? '0 0 1rem 0' : '0 auto 1rem auto' // Left alignment on mobile
+            }}
           >
             <CardLogo imageSrc={card.image} altText={card.title} />
             <CardTexte title={card.title} description={card.description} />

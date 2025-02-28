@@ -31,6 +31,12 @@
   }
 }
 
+/* Fixed: Adding a missing keyframe animation mentioned in error */
+@keyframes fadeIn {
+  from { opacity: 0.8; }
+  to { opacity: 1; }
+}
+
 .animate-fadeInUp {
   animation: fadeInUp 0.8s ease forwards;
 }
