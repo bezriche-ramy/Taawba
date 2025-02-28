@@ -1,35 +1,33 @@
 import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import './SearchBar.css';
+import './NewSearchBar.css';
 
-const SearchBar = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+const NewSearchBar = ({ onSearch }) => {
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const handleInputChange = (e) => {
-    const value = e.target.value;
-    setSearchTerm(value);
-    onSearch(value);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    onSearch(searchQuery);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSearch(searchTerm);
+  const handleInputChange = (e) => {
+    setSearchQuery(e.target.value);
   };
 
   return (
-    <form className="search-bar-container" onSubmit={handleSubmit}>
-      <div className="search-input-wrapper">
-        <FaSearch className="search-icon" />
+    <div className="new-search-container">
+      <form onSubmit={handleSearch} className="new-search-form">
+        <FaSearch className="new-search-icon" />
         <input
           type="text"
-          className="search-input"
-          placeholder="Search Chapter"
-          value={searchTerm}
+          value={searchQuery}
           onChange={handleInputChange}
+          placeholder="Search Surah..."
+          className="new-search-input"
         />
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 
-export default SearchBar;
+export default NewSearchBar;

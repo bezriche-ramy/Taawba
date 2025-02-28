@@ -5,6 +5,7 @@
   max-height: calc(100vh - 250px);
   overflow-y: auto;
   padding-right: 10px;
+  margin-top: 90px; /* Increased from 50px to 80px */
 }
 
 .chapter-item {

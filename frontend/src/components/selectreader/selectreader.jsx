@@ -43,6 +43,38 @@ const SelectReader = () => {
       image: "https://imgs.search.brave.com/GLCiwqMk7PGxniiYHuWCg6MAixhnB0qHY2YnUxOYnOU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9hcGky/LnF1cmFuLXByby5j/b20vaW1hZ2VzL2hh/bmktYXItcmlmYWkv/aGFuaS1hci1yaWZh/aS1tZWRpdW0ud2Vi/cD92ZXJzaW9uPTE2/ODY3Mzc5OTc5MDc",
       bio: "Sheikh Hani ibn Abdul-Aziz Ar-Rifai is a renowned Quran reciter born in 1941 in Riyadh, Saudi Arabia. He studied Quranic recitation under several prominent scholars and has served as an imam at various prestigious mosques.",
       fullBio: "Sheikh Hani ibn Abdul-Aziz Ar-Rifai was born in 1941 in Riyadh, Saudi Arabia. He began memorizing the Quran at an early age under the guidance of his father, who was also a scholar. He later studied Quranic sciences and recitation under Sheikh Abdullah Al-Khalaf and Sheikh Ibrahim Al-Akhdar. Sheikh Hani served as the imam of several mosques in Riyadh and later at the Prophet's Mosque in Medina. His beautiful voice and adherence to proper tajweed (recitation rules) made his recordings highly sought after throughout the Muslim world."
+    },
+    {
+      id: 6,
+      name: "Khalil Al-Husary",
+      style: "Murattal",
+      image: "https://imgs.search.brave.com/x0VCPoc-m0O8n0olcKA3s76o6Q20yREnnizgxeQX83o/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9hcGky/LnF1cmFuLXByby5j/b20vaW1hZ2VzL21h/aG1vdWQta2hhbGls/LWFsLWh1c3Nhcnkv/bWFobW91ZC1raGFs/aWwtYWwtaHVzc2Fy/eS1tZWRpdW0ud2Vi/cD92ZXJzaW9uPTE2/ODY3MzgxOTkwNjA",
+      bio: "Mahmoud Khalil Al-Husary was an Egyptian Qur'an reciter and one of the most famous Qurra' of the 20th century.",
+      fullBio: "Sheikh Mahmoud Khalil Al-Husary (1917-1980) was born in a village in Tanta, Egypt. He memorized the Quran at a young age and became renowned for his precise recitation and adherence to tajweed rules. He was appointed as a reciter at the Egyptian Radio in 1944 and made numerous recordings that are still widely used today."
+    },
+    {
+      id: 7,
+      name: "Mishari Al-Afasy",
+      style: "Murattal",
+      image: "https://imgs.search.brave.com/QyE872B75Ht0gkGiYAUgaloTDsbsby6NiLBVRG8kFXc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMucXVyYW5jZG4u/Y29tL2ltYWdlcy9y/ZWNpdGVycy82L21p/c2hhcnktcmFzaGlk/LWFsYWZhc3ktcHJv/ZmlsZS5qcGVnP3Y9/MQ",
+      bio: "Mishari Rashid Al-Afasy is a Kuwaiti Qari and imam at the Grand Mosque of Kuwait.",
+      fullBio: "Sheikh Mishari Rashid Al-Afasy was born in Kuwait in 1976. He is renowned for his beautiful voice and emotional style of recitation. He has memorized the Quran and studied Islamic Studies at the Islamic University of Madinah. Besides being a Quran reciter, he is also a renowned nasheed artist."
+    },
+    {
+      id: 8,
+      name: "Muhammad Siddiq Al-Minshawi",
+      style: "Murattal",
+      image: "https://imgs.search.brave.com/D_rI7yjsDAh8V4jUNyHytwOSi9mIp1wjoOJNpdlObNA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9lL2VlL0Vs/bWluc2h3ZXkuanBn/LzUxMnB4LUVsbWlu/c2h3ZXkuanBn",
+      bio: "Muhammad Siddiq Al-Minshawi was an Egyptian Qari known for his melodious voice and mastery of maqamat.",
+      fullBio: "Sheikh Muhammad Siddiq Al-Minshawi (1920-1969) was born in Egypt and began learning the Quran at a very young age. He became one of the most prominent Quran reciters in Egypt and the Islamic world. His unique style combined perfect tajweed with masterful use of Arabic maqamat (melodic modes)."
+    },
+    {
+      id: 10,
+      name: "Saud Al-Shuraim",
+      style: "Murattal",
+      image: "https://imgs.search.brave.com/3RBlwsbNgxv-Ihv_VbAjgDWYk8kaqsUJMkTmdnCiW-c/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMucXVyYW5jZG4u/Y29tL2ltYWdlcy9y/ZWNpdGVycy84L3Nh/b3VkLXNodXJhaW0t/cHJvZmlsZS5qcGVn/P3Y9MQ",
+      bio: "Dr. Saud Al-Shuraim is one of the imams of the Grand Mosque in Mecca and a renowned Quran reciter.",
+      fullBio: "Sheikh Dr. Saud Al-Shuraim was born in 1966 in Riyadh, Saudi Arabia. He memorized the Quran in his youth and holds a doctorate in Islamic law. He has been serving as one of the imams of the Grand Mosque in Mecca since 1991. His distinctive voice and recitation style have made him one of the most recognized Quran reciters globally."
     }
   ];
 
@@ -73,6 +105,7 @@ const SelectReader = () => {
 
   // Handle search functionality
   const handleSearch = (e) => {
+    e.preventDefault();
     setSearchTerm(e.target.value);
   };
 
@@ -91,14 +124,17 @@ const SelectReader = () => {
     <div className="select-reader-container">
       <div className="header-section">
         <h1>Quran Reciters</h1>
-        <div className="search-bar">
-          <FaSearch className="search-icon" />
-          <input
-            type="text"
-            placeholder="Search Reciter"
-            value={searchTerm}
-            onChange={handleSearch}
-          />
+        <div className="new-search-container">
+          <form className="new-search-form">
+            <FaSearch className="new-search-icon" />
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={handleSearch}
+              placeholder="Search Reciter"
+              className="new-search-input"
+            />
+          </form>
         </div>
       </div>
 
