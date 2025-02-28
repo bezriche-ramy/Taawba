@@ -7,7 +7,7 @@ import PrayerTime from './pages/prayertime';
 import SelectReaderPage from './pages/SelectReaderPage';
 import PlayQuran from './pages/playquran';
 import Chatbot from './pages/chatbot';
-import Login from './pages/auth/LoginPage';
+import Auth from './pages/auth/AuthPage';
 import './animations.css';
 import './App.css';
 
@@ -22,7 +22,7 @@ function App() {
         <Route path="/selectreader" element={<SelectReaderPage />} />
         <Route path="/playquran/:reciterId" element={<PlayQuran />} />
         <Route path="/chatbot" element={<Chatbot />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/authentication' element={<Auth />} />
       </Routes>
     </Router>
 

@@ -6,7 +6,7 @@ import { Input } from '../../components/authFront/Input';
 import { SidePicture } from '../../components/authFront/SidePicture';
 import { Button } from '../../components/authFront/Button';
 
-const Login = () => {
+const Auth = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
@@ -166,4 +166,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Auth;

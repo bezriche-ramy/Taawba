@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import NavBarLogo from './NavBarLogo';
 import NavBarButton from './NavBarButton';
+import { useNavigate } from 'react-router-dom';
 import './NavBar.css';
 
 const NavBarMain = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const navigate = useNavigate();
+  const goToSignUp = () => navigate('/authentication');
   return (
     <nav className={`navbar ${isMenuOpen ? 'active' : ''}`}>
       <NavBarLogo />
@@ -19,7 +21,7 @@ const NavBarMain = () => {
 
       <div className="nav-buttons">
         <NavBarButton type="explore">Explore</NavBarButton>
-        <NavBarButton type="signup">Sign Up</NavBarButton>
+        <NavBarButton type="signup" handleClick={goToSignUp}>Sign Up</NavBarButton>
       </div>
 
       <button className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
