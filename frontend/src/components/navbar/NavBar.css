@@ -55,13 +55,13 @@
   transition: all 0.3s ease;
 }
 
-.nav-button.explore {
+.nav-button.login {
   background: #00875A;
   border: none;
   color: white;
 }
 
-.nav-button.explore:hover {
+.nav-button.login:hover {
   background: #006d48;
 }
 

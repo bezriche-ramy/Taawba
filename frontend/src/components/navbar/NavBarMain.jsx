@@ -18,7 +18,7 @@ const NavBarMain = () => {
       </div>
 
       <div className="nav-buttons">
-        <NavBarButton type="explore">Explore</NavBarButton>
+        <NavBarButton type="login">Login</NavBarButton>
         <NavBarButton type="signup">Sign Up</NavBarButton>
       </div>
 
