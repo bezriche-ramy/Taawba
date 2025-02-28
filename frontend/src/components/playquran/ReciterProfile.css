@@ -1,0 +1,86 @@
+.reciter-profile {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.profile-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #27ae60;
+  margin-bottom: 16px;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reciter-name {
+  font-size: 24px;
+  margin: 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+.profile-bio {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #b3b3b3;
+  margin-bottom: 20px;
+}
+
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bio-toggle-btn {
+  background: transparent;
+  color: #27ae60;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  text-align: center;
+}
+
+.radio-play-btn {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.radio-play-btn:hover {
+  background-color: #2ecc71;
+}
+
+.radio-play-btn.playing {
+  background-color: #e74c3c;
+}
+
+.play-icon {
+  font-size: 14px;
+}
