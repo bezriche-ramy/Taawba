@@ -1,0 +1,351 @@
+/* Login Page Styles */
+.login-section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F5E1C8; /* Updated background color as requested */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    position: relative;
+    overflow: hidden;
+ 
+  }
+  
+  .login-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: auto;
+    min-height: 650px;
+    animation: fadeInUp 0.8s forwards;
+    flex-direction: row; /* Ensure horizontal layout */
+  }
+  
+  .login-form-container {
+    flex: 1;
+    padding: 2.8rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  
+  .login-header .welcome-text {
+    display: inline-block;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  
+  .login-header .welcome-text:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background-color: #00875A; /* Updated accent color as requested */
+    border-radius: 2px;
+  }
+  
+  .login-header h2 {
+    font-size: clamp(1.75rem, 4vw, 2.2rem);
+    color: #00875A; /* Updated header color as requested */
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  
+  .login-header p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative; /* Add position relative for absolute positioning of error message */
+  }
+  
+  .form-group label {
+    text-align: start;
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .form-group input {
+    background-color: white;
+    color: black ;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .form-group input:focus {
+    border-color: #00875A; /* Updated focus color */
+    box-shadow: 0 0 0 2px rgba(0, 135, 90, 0.1);
+    outline: none;
+  }
+  
+  .form-group input.error {
+    border-color: #e74c3c;
+    margin-bottom: 0; /* Remove bottom margin to reduce space */
+  }
+  
+  .error-message {
+    text-align: start;
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 0.2rem; /* Reduced margin to bring error closer to input */
+    margin-bottom: 0; /* No bottom margin */
+    padding: 0; /* No padding */
+    line-height: 1.2; /* Tighter line height */
+    display: block; /* Ensure it's displayed as a block */
+  }
+  
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  
+  .remember-me, .terms-agreement {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .forgot-password {
+    color: #00875A; /* Updated link color */
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  .login-button, .create-account-button {
+    background-color: #00875A; /* Updated button color as requested */
+    color: white; /* Text color as requested */
+    border: none;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+  
+  .login-button:hover, .create-account-button:hover {
+    background-color: #006d48; /* Slightly darker on hover */
+    transform: translateY(-2px);
+  }
+  
+  .login-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #777;
+    margin: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .login-separator::before,
+  .login-separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .login-separator span {
+    padding: 0 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .create-account-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .signup-option {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: #666;
+  }
+  
+  .signup-link {
+    color: #00875A; /* Updated link color */
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+  }
+  
+  .signup-link:hover {
+    text-decoration: underline;
+  }
+  
+  .login-image-container {
+    flex: 1;
+    background-image: url('https://c1.wallpaperflare.com/preview/682/173/209/quran-ramadhan-muslim-islamic-religious-mubarak.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .login-image-overlay h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .login-image-overlay p {
+    font-size: 1.1rem;
+    max-width: 80%;
+    line-height: 1.6;
+  }
+  
+  .ramadan-decoration {
+    width: 100px;
+    height: 100px;
+    margin-top: 2rem;
+    background-image: url('https://img.freepik.com/free-vector/realistic-three-dimensional-ramadan-kareem-illustration_23-2149378786.jpg?w=740&t=st=1709155427~exp=1709156027~hmac=9ca8a5a6dc5b7b5ab6d66e6d2f373b9edfe2bd53e03d1c10b9d34e7df7b04ee7');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+  }
+  
+  /* Reduce the gap between form groups to compensate for error messages */
+  .login-form {
+    gap: 1.2rem; /* Slightly reduced from 1.5rem */
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media screen and (max-width: 992px) {
+    .login-container {
+      flex-direction: column;
+      height: auto;
+    }
+    
+    .login-image-container {
+      min-height: 250px;
+      order: -1; /* Ensure image is on top on mobile */
+    }
+    
+    .login-form-container {
+      padding: 2.5rem 1.5rem;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .login-section {
+      padding: 1rem 0.75rem;
+    }
+    
+    .login-container {
+      border-radius: 12px;
+    }
+    
+    .login-form-container {
+      padding: 2rem 1.25rem;
+    }
+    
+    .login-header {
+      margin-bottom: 2rem;
+    }
+    
+    .login-image-container {
+      min-height: 200px;
+    }
+    
+    .login-image-overlay h3 {
+      font-size: 2rem;
+    }
+    
+    .login-image-overlay p {
+      font-size: 1rem;
+    }
+    
+    .form-options {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    
+    .login-button, .create-account-button {
+      padding: 0.9rem;
+    }
+  }

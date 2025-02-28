@@ -1,9 +1,9 @@
 import React from 'react';
 import './NavBarButton.css';
 
-const NavBarButton = ({ type, children }) => {
+const NavBarButton = ({ type, children, handleClick }) => {
   return (
-    <button className={`nav-button ${type}`}>
+    <button className={`nav-button ${type}`} onClick={handleClick}>
       {children}
     </button>
   );
