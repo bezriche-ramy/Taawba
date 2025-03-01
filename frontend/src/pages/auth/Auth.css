@@ -143,6 +143,7 @@
   .remember-me, .terms-agreement {
     display: flex;
     margin: 0;
+    background-color: white;
     align-items: center;
     gap: 0.5rem;
   }
