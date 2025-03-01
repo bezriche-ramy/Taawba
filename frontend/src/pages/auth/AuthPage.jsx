@@ -6,6 +6,7 @@ import { Input } from '../../components/authFront/Input';
 import { SidePicture } from '../../components/authFront/SidePicture';
 import { Button } from '../../components/authFront/Button';
 import { signUp } from '../../utils/signUp';
+import { login } from '../../utils/login';
 
 
 const Auth = () => {
@@ -63,11 +64,15 @@ const Auth = () => {
       
       try {
         if(showLogin){
-          //handle login later
-          // Set a timeout to simulate API call
-          setTimeout(() => {
-            setIsLoading(false);
-          }, 2000);
+          const user = await login(formData.email, formData.password);
+          if( user){
+            const userData = sessionStorage.getItem("user");
+            const user2 = userData ? JSON.parse(userData) : null;
+            console.log(user2)
+          }
+          else{
+            alert("it didnt happen well ")
+          }
         } else {
           //handle Signup
          
@@ -82,6 +87,9 @@ const Auth = () => {
         }
       } catch (error) {
         console.error("Authentication error:", error);
+        setIsLoading(false);
+      }
+      finally{
         setIsLoading(false);
       }
     }
@@ -147,7 +155,7 @@ const Auth = () => {
                     checked={formData.rememberMe}
                     onChange={handleChange}
                   />
-                  <label htmlFor="rememberMe">Remember me</label>
+                  <label htmlFor="rememberMe" style={{color: "#00875A"}}>Remember me</label>
                 </div>
                 <a href="/forgot-password" className="forgot-password">Forgot Password?</a>
               </div>
@@ -175,7 +183,6 @@ const Auth = () => {
                     className="spinner spinner-style" 
                   
                   />
-                  {showLogin ? 'Signing In...' : 'Creating Account...'}
                 </>
               ) : (
                 showLogin ? 'Sign In' : 'Create Account'
