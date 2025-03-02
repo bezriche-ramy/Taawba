@@ -6,7 +6,7 @@ import './NavBar.css';
 
 const NavBarMain = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [user, setUser] = useState(null); //rami here is the user now update the front accordingly
+  const [user, setUser] = useState(null); //rami here is the user now update the front accordingly updated
   const navigate = useNavigate();
   const goToSignUp = () => navigate('/authentication');
   useEffect(() => {
