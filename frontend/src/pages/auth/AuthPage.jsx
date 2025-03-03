@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Auth.css';
 import { AuthHeader } from '../../components/authFront/AuthHeader';
 import { Input } from '../../components/authFront/Input';
@@ -11,6 +11,7 @@ import { login } from '../../utils/login';
 
 const Auth = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
@@ -19,6 +20,17 @@ const Auth = () => {
   });
   const [errors, setErrors] = useState({});
   const [showLogin, setShowLogin] = useState(true);
+  
+  useEffect(() => {
+    // Check URL query parameters for mode
+    const queryParams = new URLSearchParams(location.search);
+    const mode = queryParams.get('mode');
+    if (mode === 'signup') {
+      setShowLogin(false);
+    } else {
+      setShowLogin(true);
+    }
+  }, [location]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;

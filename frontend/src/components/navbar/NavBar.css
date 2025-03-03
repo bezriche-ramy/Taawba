@@ -80,6 +80,90 @@
   display: none;
 }
 
+.user-profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: background-color 0.2s;
+}
+
+.profile-container:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.profile-picture {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+.default-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #00875A;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.user-name {
+  font-weight: 500;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 180px;
+  z-index: 100;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.dropdown-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: black;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-item:active {
+  color: black;
+  font-weight: 500;
+}
+
+.dropdown-item.logout {
+  color: #e53935;
+  font-weight: 500;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
