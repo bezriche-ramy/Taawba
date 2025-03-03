@@ -1,0 +1,60 @@
+.progress-tracker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.achievement-stars {
+  margin-bottom: 1rem;
+}
+
+.achievement-star {
+  color: gold;
+  font-size: 2rem;
+  margin: 0 0.3rem;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
+}
+
+.progress-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-circle-inner {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  text-align: center;
+  width: 80%;
+}
+
+.days-completed {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #009688;
+}
+
+.days-label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.3rem;
+}
+
+.progress-ring-circle {
+  transition: stroke-dashoffset 0.5s ease;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.progress-ring-circle-bg {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}

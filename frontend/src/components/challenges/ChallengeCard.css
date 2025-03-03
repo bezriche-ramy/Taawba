@@ -1,0 +1,101 @@
+.challenge-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.challenge-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.challenge-icon-container {
+  margin-right: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.challenge-icon {
+  width: 40px;
+  height: 40px;
+  color: #009688;
+}
+
+.challenge-content {
+  flex: 1;
+}
+
+.challenge-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.challenge-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 1rem 0;
+}
+
+.challenge-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.challenge-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #009688;
+  cursor: pointer;
+}
+
+.challenge-checkbox-label {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.xp-reward {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ff9800;
+  background-color: #fff3e0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+}
+
+.progress-container {
+  height: 6px;
+  background-color: #e0f2f1;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #009688;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+@media (max-width: 768px) {
+  .challenge-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
