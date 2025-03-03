@@ -68,7 +68,7 @@ const Auth = () => {
           if( user){
             const userData = sessionStorage.getItem("user");
             const user2 = userData ? JSON.parse(userData) : null;
-            console.log(user2)
+            navigate('/')
           }
           else{
             alert("it didnt happen well ")
