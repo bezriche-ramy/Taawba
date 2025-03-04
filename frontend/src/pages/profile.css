@@ -1,0 +1,485 @@
+/* Main Container */
+.profile-page .profile-container {
+  background-color: #f8f8f8;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  position: relative;
+  padding-top: 60px;
+  box-sizing: border-box;
+}
+
+/* Remove this section as it's now handled in NavBar.css */
+/* Navbar specific fixes */
+/* These styles are now in NavBar.css */
+
+.profile-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  /* Increase top padding significantly to move content down more */
+  padding-top: 100px;
+}
+
+/* Make sure profile page styles don't affect navbar components */
+.navbar .profile-container,
+.nav-buttons .profile-container {
+  background-color: transparent;
+  min-height: unset;
+  padding-top: 0;
+  position: static;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: background-color 0.2s;
+}
+
+.navbar .default-avatar,
+.nav-buttons .default-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #00875A;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  margin-right: 8px;
+  border: none;
+  box-shadow: none;
+}
+
+.navbar .user-name,
+.nav-buttons .user-name {
+  font-weight: 500;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Fix for navbar items */
+.profile-container .nav-links a,
+.profile-container .nav-buttons button {
+  position: relative;
+  z-index: 1001;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: #009688;
+}
+
+/* Header Section */
+.profile-header-section {
+  position: relative;
+  margin-bottom: 80px;
+  /* Increase top margin for additional spacing */
+  margin-top: 40px;
+}
+
+.profile-banner {
+  height: 200px;
+  background: linear-gradient(135deg, #009688, #26a69a);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.back-button, .edit-profile-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.back-button:hover, .edit-profile-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.profile-avatar-container {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.profile-avatar, .profile-avatar-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #009688;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  object-fit: cover;
+}
+
+.profile-avatar-edit {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: #009688;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* User Info Section */
+.profile-user-info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-name {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.profile-username {
+  font-size: 1rem;
+  color: #666;
+  margin: 5px 0 15px;
+}
+
+.profile-bio {
+  max-width: 600px;
+  margin: 0 auto 15px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.profile-meta {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.profile-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Stats Section */
+.profile-section {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  margin: 0 0 20px;
+  color: #333;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #009688;
+  border-radius: 2px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #009688;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Achievements Section */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.achievement-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.achievement-card:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-3px);
+}
+
+.achievement-icon {
+  font-size: 1.8rem;
+  color: #009688;
+  background-color: rgba(0, 150, 136, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.achievement-icon.gold {
+  color: #FFD700;
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+.achievement-icon.silver {
+  color: #C0C0C0;
+  background-color: rgba(192, 192, 192, 0.1);
+}
+
+.achievement-icon.bronze {
+  color: #CD7F32;
+  background-color: rgba(205, 127, 50, 0.1);
+}
+
+.achievement-name {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.achievement-progress {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Activity Timeline */
+.activity-timeline {
+  margin-top: 20px;
+}
+
+.activity-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  border-left: 2px solid #009688;
+  margin-left: 10px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.activity-item:last-child {
+  margin-bottom: 0;
+}
+
+.activity-item::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 24px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #009688;
+}
+
+.activity-icon {
+  background-color: rgba(0, 150, 136, 0.1);
+  color: #009688;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.activity-content h4 {
+  margin: 0 0 5px;
+  font-weight: 600;
+}
+
+.activity-content p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.activity-time {
+  display: block;
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 5px;
+}
+
+/* Community Section */
+.community-text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.community-avatars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.community-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #009688;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.community-avatar.more {
+  background-color: #f0f0f0;
+  color: #666;
+  font-size: 0.7rem;
+}
+
+.view-all-button {
+  display: block;
+  margin: 20px auto 0;
+  background-color: transparent;
+  border: 2px solid #009688;
+  color: #009688;
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-all-button:hover {
+  background-color: #009688;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    padding-top: 55px; /* Slightly less padding on mobile */
+  }
+  
+  .profile-banner {
+    height: 150px;
+  }
+  
+  .profile-avatar, .profile-avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    font-size: 2rem;
+  }
+  
+  .profile-header-section {
+    margin-bottom: 60px;
+  }
+  
+  .profile-avatar-container {
+    bottom: -50px;
+  }
+  
+  .stats-grid, .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .profile-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .profile-content {
+    padding-top: 80px; /* Adjust top padding for mobile but keep it substantial */
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid, .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-name {
+    font-size: 1.5rem;
+  }
+  
+  .activity-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .profile-banner {
+    padding: 10px;
+  }
+  
+  .back-button, .edit-profile-button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+}
