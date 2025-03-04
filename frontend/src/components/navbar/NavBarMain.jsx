@@ -80,7 +80,7 @@ const NavBarMain = () => {
             {isDropdownOpen && (
               <div className="profile-dropdown">
                 <div className="dropdown-item" onClick={() => navigate('/profile')}>Profile</div>
-                <div className="dropdown-item" onClick={() => navigate('/settings')}>Settings</div>
+                
                 <div className="dropdown-item logout" onClick={handleLogout}>Logout</div>
               </div>
             )}
