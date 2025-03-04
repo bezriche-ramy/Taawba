@@ -124,19 +124,42 @@ const AudioPlayer = ({ audioUrl, chapter }) => {
       </div>
       
       <div className="player-controls">
+        <div className="time-display">
+          <span className="time-info current-time">{formatTime(currentTime)}</span>
+          <span className="time-info duration-time">{formatTime(duration)}</span>
+        </div>
+        
         <div className="progress-container">
-          <span className="time-info">{formatTime(currentTime)}</span>
-          <input
-            ref={progressBarRef}
-            type="range"
-            className="progress-bar"
-            min="0"
-            max={duration || 0}
-            value={currentTime}
-            onChange={handleProgressChange}
-            disabled={isLoading}
-          />
-          <span className="time-info">{formatTime(duration)}</span>
+          <div className="progress-bar-wrapper">
+            <div 
+              className="progress-bar-background"
+              onClick={(e) => {
+                const progressBar = e.currentTarget;
+                const rect = progressBar.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const clickPosition = x / progressBar.offsetWidth;
+                const newTime = clickPosition * duration;
+                
+                setCurrentTime(newTime);
+                audioRef.current.currentTime = newTime;
+              }}
+            >
+              <div 
+                className="progress-bar-fill" 
+                style={{ width: `${(currentTime / duration) * 100}%` }}
+              ></div>
+              <input
+                ref={progressBarRef}
+                type="range"
+                className="progress-bar-input"
+                min="0"
+                max={duration || 0}
+                value={currentTime}
+                onChange={handleProgressChange}
+                disabled={isLoading}
+              />
+            </div>
+          </div>
         </div>
         
         <div className="control-buttons">

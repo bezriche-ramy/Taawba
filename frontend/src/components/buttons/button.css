@@ -1,0 +1,39 @@
+/* Common styles for play buttons */
+.play-button,
+.play-pause-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.play-button:hover,
+.play-pause-button:hover {
+  background-color: #2ecc71;
+}
+
+.play-button:active,
+.play-pause-button:active {
+  transform: scale(0.95);
+}
+
+.play-button svg,
+.play-pause-button svg {
+  width: 1em;
+  height: 1em;
+  font-size: 16px;
+}
+
+.play-button.disabled,
+.play-pause-button.disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}

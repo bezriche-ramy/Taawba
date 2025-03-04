@@ -57,48 +57,88 @@
   gap: 15px;
 }
 
+.time-display {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
 .progress-container {
   display: flex;
   align-items: center;
   width: 100%;
-  gap: 10px;
+  gap: 12px;
+  padding: 0 5px;
 }
 
 .time-info {
   font-size: 12px;
-  color: #b3b3b3;
   min-width: 40px;
   text-align: center;
+  font-family: monospace;
+  user-select: none;
+  background: transparent !important;
+  padding: 2px 4px;
+  border-radius: 3px;
 }
 
-.progress-bar {
+.current-time {
+  color: #27ae60;
+  text-align: left;
+  background: transparent !important;
+}
+
+.duration-time {
+  color: #b3b3b3;
+  text-align: right;
+  background: transparent !important;
+}
+
+.progress-bar-wrapper {
   flex: 1;
-  height: 4px;
-  -webkit-appearance: none;
-  appearance: none;
-  background: #333;
-  border-radius: 2px;
-  outline: none;
-  cursor: pointer;
+  position: relative;
+  height: 16px;
+  display: flex;
+  align-items: center;
 }
 
-.progress-bar::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #27ae60;
+.progress-bar-background {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: rgba(51, 51, 51, 0.3);
+  border-radius: 3px;
   cursor: pointer;
+  overflow: hidden;
 }
 
-.progress-bar::-moz-range-thumb {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
+.progress-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   background: #27ae60;
+  border-radius: 3px;
+  pointer-events: none;
+  transition: width 0.1s ease;
+}
+
+.progress-bar-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
   cursor: pointer;
-  border: none;
+  z-index: 10;
+}
+
+/* Override previous progress-bar styles */
+.progress-bar {
+  display: none;
 }
 
 .control-buttons {
@@ -201,9 +241,15 @@
   
   .progress-container {
     margin-top: 10px;
+    gap: 8px;
   }
   
-  .volume-container {
-    margin: 10px auto 0;
+  .time-info {
+    min-width: 35px;
+    font-size: 11px;
+  }
+  
+  .time-display {
+    padding: 0 5px;
   }
 }

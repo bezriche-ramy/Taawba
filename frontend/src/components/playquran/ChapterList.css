@@ -30,8 +30,8 @@
 }
 
 .play-button {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #27ae60;
   color: white;
@@ -41,6 +41,7 @@
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
+  padding: 0;
 }
 
 .play-button:hover {
