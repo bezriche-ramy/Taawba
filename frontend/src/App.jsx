@@ -6,7 +6,6 @@ import Surah from './pages/surah';
 import PrayerTime from './pages/prayertime';
 import SelectReaderPage from './pages/SelectReaderPage';
 import PlayQuran from './pages/playquran';
-import Chatbot from './pages/chatbot';
 import Auth from './pages/auth/AuthPage';
 import ChallangesPage from './pages/challanges';
 import Profile from './pages/profile';
@@ -23,7 +22,6 @@ function App() {
         <Route path="/prayertime" element={<PrayerTime />} />
         <Route path="/selectreader" element={<SelectReaderPage />} />
         <Route path="/playquran/:reciterId" element={<PlayQuran />} />
-        <Route path="/chatbot" element={<Chatbot />} />
         <Route path='/authentication' element={<Auth />} />
         <Route path='/challenges' element={<ChallangesPage />} />
         <Route path="/profile" element={<Profile />} />

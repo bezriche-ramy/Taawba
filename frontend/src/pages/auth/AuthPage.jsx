@@ -16,7 +16,9 @@ const Auth = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
-    rememberMe: false
+    name: '',
+    rememberMe: false,
+    agreeTerms: false
   });
   const [errors, setErrors] = useState({});
   const [showLogin, setShowLogin] = useState(true);
@@ -61,6 +63,14 @@ const Auth = () => {
     } else if (formData.password.length < 6) {
       newErrors.password = 'Password must be at least 6 characters';
     }
+
+    if (!showLogin && !formData.name?.trim()) {
+      newErrors.name = 'Full name is required';
+    }
+
+    if (!showLogin && !formData.agreeTerms) {
+      newErrors.agreeTerms = 'You must agree to the terms';
+    }
     
     return newErrors;
   };
@@ -71,49 +81,67 @@ const Auth = () => {
     
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-    } else {
-      setIsLoading(true); // Set loading state to true
-      
-      try {
-        if(showLogin){
-          const user = await login(formData.email, formData.password);
-          if( user){
-            const userData = sessionStorage.getItem("user");
-            const user2 = userData ? JSON.parse(userData) : null;
-            navigate('/')
-          }
-          else{
-            alert("it didnt happen well ")
-          }
+      return;
+    }
+    
+    setIsLoading(true);
+    
+    try {
+      if (showLogin) {
+        // Handle Login
+        const result = await login(formData.email, formData.password);
+        if (result.success) {
+          // Store user data in session storage
+          sessionStorage.setItem("user", JSON.stringify({
+            uid: result.user.uid,
+            email: result.user.email,
+            displayName: result.user.displayName
+          }));
+          navigate('/');
         } else {
-          //handle Signup
-         
-          const user = await signUp(formData.email, formData.password, formData.name);
-          if(user){
-            alert("Welcome " + user.displayName);
-            navigate('/')
-          } else {
-            alert("Error creating user");
-          }
-          setIsLoading(false);
+          alert("Login failed. Please try again.");
         }
-      } catch (error) {
-        console.error("Authentication error:", error);
-        setIsLoading(false);
+      } else {
+        // Handle Signup
+        const result = await signUp(formData.email, formData.password, formData.name);
+        if (result.success) {
+          alert("Welcome " + result.user.displayName);
+          // Store user data in session storage
+          sessionStorage.setItem("user", JSON.stringify({
+            uid: result.user.uid,
+            email: result.user.email,
+            displayName: result.user.displayName
+          }));
+          navigate('/');
+        } else {
+          alert("Error creating user");
+        }
       }
-      finally{
-        setIsLoading(false);
-      }
+    } catch (error) {
+      console.error("Authentication error:", error);
+      alert(error.message || "Authentication failed. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const handleCreateAccount = () => {
-    if(showLogin) {
+    if (showLogin) {
       setShowLogin(false);
-      console.log("showLogin", formData);
+      setFormData({
+        ...formData,
+        name: '',
+        agreeTerms: false
+      });
+      setErrors({});
     } else {
       setShowLogin(true);
-      console.log("showLogin", formData);
+      setFormData({
+        ...formData,
+        name: '',
+        agreeTerms: false
+      });
+      setErrors({});
     }
   };
 

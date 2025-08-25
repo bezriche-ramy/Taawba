@@ -9,6 +9,12 @@ const CardMain = () => {
   const navigate = useNavigate();
   const cardsRef = useRef(null);
   
+  // Function to open chatbot modal (this will be handled by the navbar)
+  const openChatbot = () => {
+    // Dispatch a custom event that the navbar can listen to
+    window.dispatchEvent(new CustomEvent('openChatbot'));
+  };
+  
   const cardsData = [
     {
       image: "https://c1.wallpaperflare.com/preview/682/173/209/quran-ramadhan-muslim-islamic-religious-mubarak.jpg",
@@ -32,7 +38,7 @@ const CardMain = () => {
       image: "https://imgs.search.brave.com/qZRwHhTAnttHrwPM1VuyTyNFHPhZXDGZXyFfU2_-99Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cHJvZC53ZWJzaXRl/LWZpbGVzLmNvbS82/NzNiNWU0ODM5YTZh/ZDFlODNjZjNhMGUv/Njc1YzY0NTA0MmRl/NzBkNjQ2ZjFkOGM1/X2hhcXFib3Qud2Vi/cA", // Updated image URL for AI Assistant
       title: "Islamic AI Assistant",
       description: "Get answers to your Islamic questions with our AI chatbot assistant.",
-      onClick: () => navigate('/chatbot')
+      onClick: openChatbot
     },
     {
       image: "https://img.freepik.com/free-photo/muslim-boy-learning-how-make-dua-allah_53876-25223.jpg",

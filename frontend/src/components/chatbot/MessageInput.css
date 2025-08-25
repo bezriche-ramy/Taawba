@@ -1,65 +1,116 @@
+/* Modern Message Input with Islamic Color Scheme */
 .message-input-container {
   display: flex;
-  padding: 0;
-  position: relative;
+  gap: 12px;
   border-radius: 24px;
-  overflow: hidden;
-  background-color: #2d3b4d;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid;
+  transition: all 0.3s ease;
+}
+
+.light-mode .message-input-container {
+  background: #FFFFFF;
+  border-color: #E5E5E5;
+}
+
+.dark-mode .message-input-container {
+  background: #1A1A1A;
+  border-color: #333333;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.message-input-container:focus-within {
+  border-color: #1A7346;
+  box-shadow: 0 8px 30px rgba(26, 115, 70, 0.15);
+  transform: translateY(-2px);
 }
 
 .message-input {
-  flex-grow: 1;
+  flex: 1;
   border: none;
-  padding: 12px 16px;
-  font-size: 14px;
   outline: none;
-  background-color: #2d3b4d;
-  color: #e0e0e0;
+  padding: 16px 20px;
+  font-size: 0.95rem;
+  background: transparent;
+  border-radius: 20px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.light-mode .message-input {
+  color: #1A1A1A;
+}
+
+.dark-mode .message-input {
+  color: #F5F5F5;
 }
 
 .message-input::placeholder {
-  color: #8f9bab;
+  font-weight: 400;
+  transition: color 0.3s ease;
 }
 
-.message-input:focus {
-  border-color: #28a745;
-  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.25);
+.light-mode .message-input::placeholder {
+  color: #4D4D4D;
 }
 
-.send-button {
-  background: linear-gradient(135deg, #5cb85c 0%, #3d9970 100%);
-  color: white;
-  border: none;
-  min-width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  position: relative;
-  overflow: hidden;
-  outline: none; /* Remove outline on focus */
+.dark-mode .message-input::placeholder {
+  color: #B3B3B3;
 }
 
-/* Add explicit focus state to remove border/outline */
-.send-button:focus {
-  outline: none;
-  box-shadow: none;
-  border: none;
-}
-
-.send-button:disabled {
-  background: #444;
+.message-input:disabled {
+  opacity: 0.6;
   cursor: not-allowed;
 }
 
-.sending-animation {
-  animation: rotating 2s linear infinite;
+.send-button {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1A7346 0%, #C19A6B 100%);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(26, 115, 70, 0.3);
+  flex-shrink: 0;
 }
 
-@keyframes rotating {
+.send-button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(26, 115, 70, 0.4);
+}
+
+.send-button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.send-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.send-icon, .sending-icon {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.send-button:hover:not(:disabled) .send-icon {
+  transform: scale(1.1);
+}
+
+/* Sending Animation */
+.sending-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
@@ -68,14 +119,43 @@
   }
 }
 
-/* Islamic design element: subtle pattern on the input */
-.message-input-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cg fill='%23ffffff'%3E%3Cpath d='M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+/* Responsive Design */
+@media (max-width: 768px) {
+  .message-input-container {
+    padding: 6px;
+    border-radius: 20px;
+  }
+  
+  .message-input {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .send-button {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .send-icon, .sending-icon {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .message-input-container {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+  
+  .message-input {
+    border-radius: 16px;
+    padding: 12px 16px;
+  }
+  
+  .send-button {
+    width: 100%;
+    height: 44px;
+    border-radius: 16px;
+  }
 }

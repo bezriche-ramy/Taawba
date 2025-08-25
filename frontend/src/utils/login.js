@@ -1,29 +1,21 @@
-import { auth } from "../firebase/firebase-config";
-import { signInWithEmailAndPassword } from "firebase/auth";
-
+// Simple login function without Firebase
 export const login = async (email, password) => {
-    try {
-        const userCredentials = await signInWithEmailAndPassword(auth, email, password);
-        const user = userCredentials.user;
-        if( user)
-        {
-            sessionStorage.setItem(
-                "user",
-                JSON.stringify({
-                  uid: user.uid,
-                  email: user.email,
-                  displayName: user.displayName,
-                  photoURL: user.photoURL, 
-                })
-              );
-            return true
-        }
-        else{
-            return false
-        }
-        
-    } catch (error) {
-        console.error(error);
-        return false;
-    }
-}
+  // Simulate API call delay
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  
+  // Simple validation - you can customize this
+  if (email && password) {
+    // For demo purposes, accept any non-empty email/password
+    // In a real app, you'd validate against your backend
+    return {
+      success: true,
+      user: {
+        email: email,
+        displayName: email.split('@')[0], // Use email prefix as display name
+        uid: 'user_' + Date.now() // Generate a simple user ID
+      }
+    };
+  } else {
+    throw new Error('Email and password are required');
+  }
+};
