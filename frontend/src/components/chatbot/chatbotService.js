@@ -1,5 +1,5 @@
 // AI Chatbot Service - Using Google Gemini API to search web from Sunnah websites
-const API_KEY = 'AIzaSyBIOFxTLd_ZqjwxWuRaAaSv5wGbppB1Wts';
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || 'AIzaSyBIOFxTLd_ZqjwxWuRaAaSv5wGbppB1Wts';
 const API_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta';
 
 // Sunnah websites for authentic Islamic information
